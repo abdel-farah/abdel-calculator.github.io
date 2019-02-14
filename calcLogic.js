@@ -22,7 +22,7 @@ function resetDisplay(){
 
 $(document).ready(function(){
   $(".number").click(function(){
-    if(calculator.valueOnScreen == '0' || calculator.valueOnResultScreen == calculator.valueOnScreen ){
+    if(calculator.valueOnScreen == '0' || calculator.valueOnResultScreen == calculator.valueOnScreen || calculator.valueOnScreen == "ERROR"){
         calculator.valueOnScreen = $(this).text()
         updateDisplay();
   	}
