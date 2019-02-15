@@ -43,7 +43,7 @@ $(document).ready(function(){
   });
 
   $(".bracket").click(function(){
-     if(calculator.valueOnScreen == '0' ){
+     if(calculator.valueOnScreen == '0' || calculator.valueOnResultScreen == calculator.valueOnScreen || calculator.valueOnScreen == "ERROR"){
         calculator.valueOnScreen = $(this).text()
         updateDisplay();
     }
@@ -69,7 +69,7 @@ $(document).ready(function(){
   });
 
   $(".decimal").click(function(){
-     if(calculator.valueOnResultScreen == calculator.valueOnScreen ){
+     if(calculator.valueOnResultScreen == calculator.valueOnScreen || calculator.valueOnScreen == "ERROR"){
         calculator.valueOnScreen = $(this).text()
         updateDisplay();
     }
