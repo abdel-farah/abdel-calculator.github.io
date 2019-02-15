@@ -1,8 +1,6 @@
 
 const calculator = {
   valueOnScreen: '0',
-  operandOne: null,
-  operator: null,
   valueOnResultScreen: '0',
   result: '0',
   decimalUsed: false,
@@ -34,12 +32,15 @@ $(document).ready(function(){
   });
 
   $(".operator").click(function(){
-      
-      calculator.operandOne = calculator.valueOnScreen;
-      calculator.operator = $(this).val();
+      if(calculator.valueOnScreen == "ERROR"){
+        calculator.valueOnScreen = $(this).val()
+        updateDisplay();
+    }
+    else{ 
       calculator.valueOnScreen = calculator.valueOnScreen + $(this).val();
       updateDisplay();
       console.log(calculator);
+    }
   });
 
   $(".bracket").click(function(){
